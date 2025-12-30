@@ -12,14 +12,19 @@ def view_tasks():
 
 while True:
     print("\n1.Add Task 2.View Tasks 3.Exit")
-    choice = input("Enter choice: ")
 
-    if choice == "1":
+    try:
+        choice = int(input("Enter choice: "))
+    except ValueError:
+        print("Invalid input. Please enter a number.")
+        continue
+
+    if choice == 1:
         task = input("Enter task: ")
         add_task(task)
-    elif choice == "2":
+    elif choice == 2:
         view_tasks()
-    elif choice == "3":
+    elif choice == 3:
         break
     else:
         print("Invalid choice")
